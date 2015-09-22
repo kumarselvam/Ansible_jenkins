@@ -1,0 +1,12 @@
+- name: ansible
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: package ansible
+      apt: pkg=software-properties-common
+
+    - name: ansible repository
+      apt_repository: repo=ppa:ansible/ansible
+
+    - name: install ansible
+      apt: name=ansible state=present update_cache=yes

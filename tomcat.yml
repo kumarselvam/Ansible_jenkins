@@ -1,0 +1,9 @@
+- name: tomcat
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: install tomcat
+      apt: name=tomcat7 update_cache=yes state=present
+
+    - name: tomcat start
+      service: name=tomcat7 state=started

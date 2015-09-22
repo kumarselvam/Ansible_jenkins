@@ -1,0 +1,6 @@
+- name: Erlang
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: install erlang
+      apt: name=erlang state=present

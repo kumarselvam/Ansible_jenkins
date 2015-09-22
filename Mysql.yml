@@ -1,0 +1,6 @@
+- name: MYSQL
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: install mysql
+      apt: name=mysql-server-5.6 update_cache=yes state=present

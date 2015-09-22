@@ -1,0 +1,6 @@
+- name: vagrant
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: update
+      apt: name=vagrant state=present 

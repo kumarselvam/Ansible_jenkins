@@ -1,0 +1,33 @@
+- name: ruby
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: install curl
+      apt: name=curl state=present
+
+    - name: rvm using curl
+      shell: https://rvm.io/mpapis.asc https://keybase.io/mpap
+      sudo: True
+
+    - name: install ruby dependencies 
+      action: apt pkg={{item}} state=installed
+      with_items:
+        - automake
+        - bison
+        - autoconf
+        - libreadline6
+        - libreadline6-dev
+        - libssl-dev
+        - gawk
+        - zlib1g-dev
+        - libyaml-dev
+        - libsqlite3-dev
+        - libxml2-dev
+        - libxslt1-dev
+       
+    - name: install rvm ruby
+      apt: name= rvm install ruby state=present
+
+    - name: install gem rails
+      apt: name= gem install rails state=present
+

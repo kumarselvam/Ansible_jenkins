@@ -1,0 +1,11 @@
+- name: python
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: python repository
+      apt_repository: repo=ppa:fkrull/deadsnakes state=present
+
+    - name: install python
+      apt: name=python3.4 update_cache=yes state=present
+
+ 

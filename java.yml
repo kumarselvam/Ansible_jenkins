@@ -1,0 +1,21 @@
+- name: java
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: install jre file
+      apt: name=openjdk-7-jre 
+
+    - name: install jdk
+      apt: name=openjdk-7-jdk state=present
+ 
+    - name: python software
+      apt: name=python-software-properties
+
+    - name: java repository
+      apt_repository: repo=ppa:webupd8team/java
+
+    - name: java license
+      shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+
+    - name: install oracle new version
+      apt: name=oracle-java8-installer state=present

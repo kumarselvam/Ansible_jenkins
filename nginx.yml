@@ -1,0 +1,7 @@
+- name: install nginx
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: nginx install
+      apt: name=nginx update_cache=yes state=present
+

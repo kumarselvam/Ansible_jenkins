@@ -1,0 +1,15 @@
+- name: debian mongodb
+  hosts: telecmi
+  sudo: True
+  tasks:
+    - name: mongodb key
+      apt_key: key=keyserver.ubuntu.com id=7F0CEB10
+
+    - name: mongo repository
+      apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' state=present
+
+    - name: install mongodb
+      apt: name=mongodb-org update_cache=yes state=present
+
+    - name: start mongodb
+      service: name=mongod state=starded
