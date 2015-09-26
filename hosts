@@ -1,2 +1,2 @@
 [telecmi]
-aws ansible_ssh_host=ec2-54-254-183-227.ap-southeast-1.compute.amazonaws.com ansible_ssh_port=22 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/Desktop/balaraman.pem
+aws ansible_ssh_host=54.254.183.227 ansible_ssh_port=22 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/Desktop/balaraman.pem
