@@ -1,7 +1,6 @@
 - name: curl
   hosts: telecmi
-  sudo: yes
   tasks:
     - name: install curl
       apt: name=curl state=present
-      
+      sudo: yes
